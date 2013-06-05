@@ -78,7 +78,8 @@ let g:git_branch_status_head_current=1
 
 " php syntax checker
 au BufRead *.php map <F8> :w !php -l<CR>
-
+" python syntax checker
+au BufRead *.py map <F8> :w !python <CR>
 
 
 " NerdTree
