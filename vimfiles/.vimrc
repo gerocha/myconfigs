@@ -21,7 +21,7 @@ set incsearch
 set tabpagemax=15
 set preserveindent
 
-map <F10> :set list listchars=tab:¬\ ,trail:·,extends:>,precedes:< <CR>
+map <C-l> :set list listchars=tab:¬\ ,trail:·,extends:>,precedes:< <CR>
 
 colorscheme wombat256mod
 
@@ -48,7 +48,9 @@ Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/AutoComplPop'
 Bundle 'scrooloose/nerdtree'
 Bundle 'StanAngeloff/php.vim'
-
+Bundle 'joonty/vdebug.git'
+Bundle 'joonty/vim-phpunitqf'
+Bundle 'vim-scripts/po.vim'
 " End Vundle
 
 hi statusline ctermfg=darkgrey ctermbg=black
@@ -81,6 +83,8 @@ au BufRead *.php map <F8> :w !php -l<CR>
 " python syntax checker
 au BufRead *.py map <F8> :w !python <CR>
 
+" php unit test
+au BufRead *.php map <F5> :Test %<CR>
 
 " NerdTree
 let g:NERDTreeWinPos = "right"
