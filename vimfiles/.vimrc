@@ -23,6 +23,7 @@ set preserveindent
 
 map <C-l> :set list listchars=tab:¬\ ,trail:·,extends:>,precedes:< <CR>
 
+set t_Co=256
 colorscheme wombat256mod
 
 " 80 characters line
