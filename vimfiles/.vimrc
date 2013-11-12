@@ -20,15 +20,19 @@ set hlsearch
 set incsearch
 set tabpagemax=15
 set preserveindent
+set modeline
+set tabstop=8
+set background=dark
+set t_Co=256
+filetype indent on
 
 map <C-l> :set list listchars=tab:¬\ ,trail:·,extends:>,precedes:< <CR>
 
-set t_Co=256
 colorscheme wombat256mod
 
 " 80 characters line
 let &colorcolumn=join(range(81,999),",")
-hi ColorColumn ctermfg=grey ctermbg=black guibg=black guifg=grey
+hi ColorColumn ctermfg=grey ctermbg=black guifg=grey guibg=black
 
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
@@ -49,12 +53,15 @@ Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/AutoComplPop'
 Bundle 'scrooloose/nerdtree'
 Bundle 'StanAngeloff/php.vim'
-Bundle 'joonty/vdebug.git'
-Bundle 'joonty/vim-phpunitqf'
-Bundle 'vim-scripts/po.vim'
+Bundle 'klen/python-mode'
+
+" Bundle 'joonty/vdebug.git'
+" Bundle 'joonty/vim-phpunitq'
+" Bundle 'vim-scripts/po.vim'
+
 " End Vundle
 
-hi statusline ctermfg=darkgrey ctermbg=black
+hi statusline ctermfg=darkgrey ctermbg=black guifg=darkgrey guibg=black
 set statusline=%f                                       " Path to the file
 set statusline+=\ -\                                    " Separator
 set statusline+=\ %Y%y                                  " Type of the file
@@ -85,7 +92,8 @@ au BufRead *.php map <F8> :w !php -l<CR>
 au BufRead *.py map <F8> :w !python <CR>
 
 " php unit test
-au BufRead *.php map <F5> :Test %<CR>
+" au BufRead *.php map <F5> :Test %<CR>
+"
 
 " NerdTree
 let g:NERDTreeWinPos = "right"
