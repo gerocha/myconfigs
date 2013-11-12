@@ -28,7 +28,7 @@ colorscheme wombat256mod
 
 " 80 characters line
 let &colorcolumn=join(range(81,999),",")
-hi ColorColumn ctermfg=grey ctermbg=black
+hi ColorColumn ctermfg=grey ctermbg=black guibg=black guifg=grey
 
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
