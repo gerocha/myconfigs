@@ -128,7 +128,6 @@ let g:pymode = 1
 let g:pymode_doc_key = 'K'
 "
 "
-
 " Load run code plugin
  let g:pymode_run = 1
 "
