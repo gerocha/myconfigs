@@ -1,0 +1,9 @@
+virtualenvwrapper
+pylint
+rope
+mccabe
+pyflakes
+pep257
+pylama
+autopep8
+pep8
