@@ -19,4 +19,4 @@ My Config Files
         AutoComplPop: plugin to word complete sugestion on a popup
         taglist: src code navigator
         .vimrc: config file to use vim like an IDE
-
+        PythonMode: turns your vim on a python complete IDE
