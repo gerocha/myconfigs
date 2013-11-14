@@ -54,6 +54,8 @@ Bundle 'vim-scripts/AutoComplPop'
 Bundle 'scrooloose/nerdtree'
 Bundle 'StanAngeloff/php.vim'
 Bundle 'klen/python-mode'
+Bundle 'hynek/python-pep8-indent'
+
 
 " Bundle 'joonty/vdebug.git'
 " Bundle 'joonty/vim-phpunitq'
@@ -89,7 +91,8 @@ let g:git_branch_status_head_current=1
 " php syntax checker
 au BufRead *.php map <F8> :w !php -l<CR>
 " python syntax checker
-au BufRead *.py map <F8> :w !python <CR>
+" au BufRead *.py map <F8> :w !python <CR>
+hi Error guifg=#ff0000 gui=undercurl
 
 " php unit test
 " au BufRead *.php map <F5> :Test %<CR>
@@ -107,4 +110,82 @@ autocmd BufRead *.vala,*.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
 au BufRead,BufNewFile *.vala,*.vapi setfiletype vala
 autocmd BufWritePre *.py :%s/\s\+$//e
 
+" Python Mode
+let g:pymode_rope = 1
+
+let g:pymode_run_key = '<F8>'
+
 let g:pymode_lint_write = 0
+let g:pymode_rope_autocomplete_map = '<C-Space>'
+let g:pymode_rope_auto_project = 1
+
+let g:pymode_rope_vim_completion = 1
+
+
+let g:pymode_folding = 1
+
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8,mccabe"
+
+let g:pymode_lint_minheight = 3
+let g:pymode_lint_maxheight = 6
+
+let g:pymode_lint_todo_symbol = 'WW'
+let g:pymode_lint_comment_symbol = 'CC'
+let g:pymode_lint_visual_symbol = 'RR'
+let g:pymode_lint_error_symbol = 'EE'
+let g:pymode_lint_info_symbol = 'II'
+let g:pymode_lint_pyflakes_symbol = 'FF'
+
+let g:pymode_virtualenv = 1
+
+let g:pymode_indent = 1
+
+
+" Enable pymode's custom syntax highlighting
+let g:pymode_syntax = 1
+
+" Enable all python highlightings
+let g:pymode_syntax_all = 1
+
+" Highlight "print" as a function
+let g:pymode_syntax_print_as_function = 0
+
+" Highlight indentation errors
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+
+" Highlight trailing spaces
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+" Highlight string formatting
+let g:pymode_syntax_string_formatting = g:pymode_syntax_all
+
+" Highlight str.format syntax
+let g:pymode_syntax_string_format = g:pymode_syntax_all
+
+" Highlight string.Template syntax
+let g:pymode_syntax_string_templates = g:pymode_syntax_all
+
+" Highlight doc-tests
+let g:pymode_syntax_doctests = g:pymode_syntax_all
+
+" Highlight builtin objects (__doc__, self, etc)
+let g:pymode_syntax_builtin_objs = g:pymode_syntax_all
+
+" Highlight builtin functions
+let g:pymode_syntax_builtin_funcs = g:pymode_syntax_all
+
+" Highlight exceptions
+let g:pymode_syntax_highlight_exceptions = g:pymode_syntax_all
+
+" Highlight equal operator
+let g:pymode_syntax_highlight_equal_operator = g:pymode_syntax_all
+
+" Highlight stars operator
+let g:pymode_syntax_highlight_stars_operator = g:pymode_syntax_all
+
+" Highlight `self`
+let g:pymode_syntax_highlight_self = g:pymode_syntax_all
+
+" For fast machines
+let g:pymode_syntax_slow_sync = 0
